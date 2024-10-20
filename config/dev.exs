@@ -5,7 +5,7 @@ config :gist, Gist.Repo,
   username: "khalid",
   password: "",
   hostname: "localhost",
-  database: "elixir",
+  database: "gist",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
