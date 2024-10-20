@@ -67,3 +67,13 @@ You can now customize the generated authentication system to fit your specific n
 Remember to run your tests frequently to ensure your changes don't break existing functionality.
 
 Happy coding! 🚀
+
+Generate Gist context and schema:
+
+mix phx.gen.context Gists Gist gists user_id:references:users name:string description:text markup_text:text
+
+This command creates the Gists context and Gist schema with the specified fields. It sets up the database structure and basic CRUD operations for gists.
+
+
+Remember to run migrations after generating the context:
+mix ecto.migrate
