@@ -1,32 +1,24 @@
-<header class="px-4 sm:px-6 lg:px-8">
-  <div class="flex items-center justify-between border-b border-zinc-100 py-3 text-sm">
-    <div class="flex items-center gap-4">
-      <a href="/">
-        <img src={~p"/images/logo.svg"} width="36" />
-      </a>
-      <p class="bg-brand/5 text-brand rounded-full px-2 font-medium leading-6">
-        v<%= Application.spec(:phoenix, :vsn) %>
-      </p>
-    </div>
-    <div class="flex items-center gap-4 font-semibold leading-6 text-zinc-900">
-      <a href="https://twitter.com/elixirphoenix" class="hover:text-zinc-700">
-        @elixirphoenix
-      </a>
-      <a href="https://github.com/phoenixframework/phoenix" class="hover:text-zinc-700">
-        GitHub
-      </a>
-      <a
-        href="https://hexdocs.pm/phoenix/overview.html"
-        class="rounded-lg bg-zinc-100 px-2 py-1 hover:bg-zinc-200/80"
-      >
-        Get Started <span aria-hidden="true">&rarr;</span>
-      </a>
-    </div>
+<header class="flex justify-between items-center px-6 py-3 bg-slate-800 w-full">
+  <div class="flex items-center gap-3 flex-wrap">
+    <a href={~p"/"} class="inline-flex items-center text-white font-bold">
+      <img src="/images/gist-logo.svg" alt="Logo" class="w-auto h-8 mr-2" />
+      <span class="font-bold text-lg">Gist</span>
+    </a>
+    <input
+      type="text"
+      class="border bg-slate-950 placeholder:emDark-light focus:outline-none focus:border-emLavender focus:ring-0 px-3 py-1 text-white rounded-md px-2 py-1 bg-emDark-dark"
+      placeholder="Search..."
+    />
+    <a href="#" class="text-lg font-bold text-white">All Gists</a>
+  </div>
+
+  <div class="flex items-center relative">
+    <button class="inline-grid place-items-center bg-slate-900 border-slate-300 border rounded-full h-10 w-10 border-white/50" type="button" id="userDropdownButton">
+      <img
+        src="/images/user-image.svg"
+        alt="Profile Image"
+        class="w-7 h-7 object-contain rounded-full "
+      />
+    </button>
   </div>
 </header>
-<main class="px-4 py-20 sm:px-6 lg:px-8">
-  <div class="mx-auto max-w-2xl">
-    <.flash_group flash={@flash} />
-    <%= @inner_content %>
-  </div>
-</main>
