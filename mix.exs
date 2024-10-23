@@ -19,7 +19,7 @@ defmodule Gist.MixProject do
   def application do
     [
       mod: {Gist.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :os_mon]
     ]
   end
 
@@ -60,7 +60,8 @@ defmodule Gist.MixProject do
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.1.1"},
       {:bandit, "~> 1.5"},
-      {:myxql, "~> 0.7.1"}
+      {:myxql, "~> 0.7.1"},
+      {:ecto_mysql_extras, "~> 0.6.2"}
     ]
   end
 

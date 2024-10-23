@@ -13,12 +13,59 @@
   </div>
 
   <div class="flex items-center relative">
-    <button class="inline-grid place-items-center bg-slate-900 border-slate-300 border rounded-full h-10 w-10 border-white/50" type="button" id="userDropdownButton">
+    <button
+      class="inline-grid place-items-center bg-slate-900 border-slate-300 border rounded-full h-10 w-10 border-white/50"
+      type="button"
+      id="userDropdownButton"
+    >
       <img
         src="/images/user-image.svg"
         alt="Profile Image"
         class="w-7 h-7 object-contain rounded-full "
       />
     </button>
+    <div
+      id="dropdown"
+      class="absolute top-7 right-7 mt-2 text-white p-2 w-48 bg-slate-900 rounded-md shadow-lg "
+    >
+      <%= if @current_user do %>
+        <.link
+          href={~p"/users/log_out"}
+          class="dropdown-item"
+          role="menuitem"
+          tabindex="-1"
+          method="delete"
+          id="user_menu-item-0"
+        >
+          Sign Out
+        </.link>
+      <% else %>
+        <.link
+          href={~p"/users/log_in"}
+          class="dropdown-item"
+          role="menuitem"
+          tabindex="-1"
+          method="get"
+          id="user_menu-item-0"
+        >
+          Sign In
+        </.link>
+        <.link
+          href={~p"/users/register"}
+          class="dropdown-item"
+          role="menuitem"
+          tabindex="-1"
+          method="get"
+          id="user_menu-item-0"
+        >
+          Register
+        </.link>
+      <% end %>
+    </div>
   </div>
 </header>
+
+<main>
+  <.flash_group flash={@flash} />
+  <%= @inner_content %>
+</main>

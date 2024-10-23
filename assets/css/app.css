@@ -18,6 +18,12 @@
   font-style: normal;
 }
 
-html, body{
+html,
+body {
   width: 100vw;
+}
+@layer base {
+  .dropdown-item {
+    @apply block px-4 py-2 hover:bg-slate-700 border-b border-slate-500 cursor-pointer transition-all duration-300;
+  }
 }
