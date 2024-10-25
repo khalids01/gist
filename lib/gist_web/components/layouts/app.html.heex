@@ -16,7 +16,7 @@
     <button
       class="inline-grid place-items-center bg-slate-900 border-slate-300 border rounded-full h-10 w-10 border-white/50"
       type="button"
-      id="userDropdownButton"
+      phx-click={Gist.Layout.App.toggle_dropdown_menu()}
     >
       <img
         src="/images/user-image.svg"
@@ -26,19 +26,31 @@
     </button>
     <div
       id="dropdown"
-      class="absolute top-7 right-7 mt-2 text-white p-2 w-48 bg-slate-900 rounded-md shadow-lg "
+      class="absolute top-7 right-7 mt-2 text-white p-2 w-60 bg-slate-900 rounded-md shadow-lg "
+      hidden="true"
     >
       <%= if @current_user do %>
-        <.link
-          href={~p"/users/log_out"}
-          class="dropdown-item"
-          role="menuitem"
-          tabindex="-1"
-          method="delete"
-          id="user_menu-item-0"
-        >
-          Sign Out
-        </.link>
+        <div class="px-4 py-2">
+          <p>Signed in as</p>
+          <p><%= @current_user.email %></p>
+        </div>
+        <%= for {text, path, method} <- [
+            {"Settings", ~p"/users/settings", "get"},
+            {"Your Gists", ~p"/users/settings", "get"},
+            {"Saved Gists", ~p"/users/settings", "get"},
+            {"Sign Out", ~p"/users/log_out", "delete"},
+          ] do %>
+          <.link
+            href={path}
+            class="dropdown-item"
+            role="menuitem"
+            tabindex="-1"
+            method={method}
+            id="user_menu-item-0"
+          >
+            <%= text %>
+          </.link>
+        <% end %>
       <% else %>
         <.link
           href={~p"/users/log_in"}

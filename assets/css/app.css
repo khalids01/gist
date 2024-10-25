@@ -24,6 +24,6 @@ body {
 }
 @layer base {
   .dropdown-item {
-    @apply block px-4 py-2 hover:bg-slate-700 border-b border-slate-500 cursor-pointer transition-all duration-300;
+    @apply block px-4 py-3 text-base hover:bg-slate-700 border-b border-slate-500 cursor-pointer transition-all duration-300;
   }
 }
