@@ -1,0 +1,35 @@
+<section class="flex items-center jusitfy-center em-gradient w-full bg-red-500">
+  <h1 class="text-3xl font-bold text-white ">Share Codes and shipets</h1>
+</section>
+
+<.form for={@form}>
+  <div class="justify center flex-col space-y-4 px-28 mb-10">
+    <.input
+      field={@form[:description]}
+      label="Descrition"
+      placeholder="Gist Description.."
+      autocomplete="off"
+    />
+
+    <div>
+      <div class="flex p-2 items-center bg-slate-950 rounded-t-md border">
+        <div class="w-[300px] mb-2">
+          <.input
+            field={@form[:name]}
+            placeholder="Filename including extension..."
+            autocomplete="off"
+          />
+        </div>
+      </div>
+      <%# <%= textarea(@form, :markup_text,
+        class: "textarea w-full rounded-b-md",
+        placeholder: "Insert code...",
+        spellcheck: "false",
+        autocomplete: "off"
+      ) %> %>
+    </div>
+    <div class="flex justify-end">
+      <.button class="create_button">Create gist</.button>
+    </div>
+  </div>
+</.form>

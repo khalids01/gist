@@ -4,8 +4,8 @@ defmodule Gist.Comments.Comment do
 
   schema "comments" do
     field :markup_text, :string
-    belongs_to :users, Gist.Accounts.User
-    belongs_to :gists, Gist.CodeGists.CodeGist
+    belongs_to :user, Gist.Accounts.User
+    belongs_to :gist, Gist.CodeGists.CodeGist
 
     timestamps(type: :utc_datetime)
   end

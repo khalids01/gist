@@ -1,7 +1,7 @@
 defmodule GistWeb.Router do
   use GistWeb, :router
-
   import GistWeb.UserAuth
+  use Kaffy.Routes, scope: "/admin", pipe_through: [:browser, :require_authenticated_user]
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -66,6 +66,7 @@ defmodule GistWeb.Router do
 
     live_session :require_authenticated_user,
       on_mount: [{GistWeb.UserAuth, :ensure_authenticated}] do
+      live "/create", CreateGistLive
       live "/users/settings", UserSettingsLive, :edit
       live "/users/settings/confirm_email/:token", UserSettingsLive, :confirm_email
     end

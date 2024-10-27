@@ -3,8 +3,8 @@ defmodule Gist.CodeGists.SavedGist do
   import Ecto.Changeset
 
   schema "saved_gist" do
-    belongs_to :users, Gist.Accounts.User
-    belongs_to :gists, Gist.CodeGists.CodeGist
+    belongs_to :user, Gist.Accounts.User
+    belongs_to :gist, Gist.CodeGists.CodeGist
 
     timestamps(type: :utc_datetime)
   end

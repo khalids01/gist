@@ -6,7 +6,7 @@ defmodule Gist.CodeGists.CodeGist do
     field :name, :string
     field :description, :string
     field :markup_text, :string
-    belongs_to :users, Gist.Accounts.User
+    belongs_to :user, Gist.Accounts.User
     has_many :comments, Gist.Comments.Comment
 
     timestamps(type: :utc_datetime)

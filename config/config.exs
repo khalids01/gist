@@ -58,6 +58,28 @@ config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
+config :kaffy,
+  # required keys
+  # required
+  otp_app: :gist,
+  # required
+  ecto_repo: Gist.Repo,
+  # required
+  router: GistWeb.Router,
+  # optional keys
+  admin_title: "Elixir Gist",
+  admin_logo: [
+    url: "/images/gist-logo.svg",
+    style: "width:40;height:40px;"
+  ],
+  admin_logo_mini: "/images/logo-mini.png",
+  hide_dashboard: true,
+  home_page: [schema: [:accounts, :user]],
+  # since v0.10.0
+  enable_context_dashboards: true,
+  # since v0.10.0
+  admin_footer: "Elixir Gist &copy; 2024"
+
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
