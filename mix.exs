@@ -62,7 +62,8 @@ defmodule Gist.MixProject do
       {:bandit, "~> 1.5"},
       {:myxql, "~> 0.7.1"},
       {:ecto_mysql_extras, "~> 0.6.2"},
-      {:kaffy, github: "aesmail/kaffy", branch: "master"}
+      {:kaffy, github: "aesmail/kaffy", branch: "master"},
+      {:open_api_spex, "~> 3.21"}
     ]
   end
 

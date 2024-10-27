@@ -40,19 +40,25 @@ body {
   }
 
   form input[type="text"] {
-    @apply bg-emDark-dark font-brand font-regular text-white text-xs border border-white;
+    @apply bg-emDark-dark font-brand font-regular text-white text-xs border !border-gray-500;
   }
 
   form input[type="text"]:focus {
     @apply focus:outline-none focus:border-emLavender focus:ring-0;
   }
 
-  .textarea {
-    @apply bg-emDark-dark font-brand font-regular text-white text-xs border border-white h-[300px] resize-none;
+  textarea {
+    @apply bg-emDark-dark !text-white !mt-0 font-brand font-regular text-white text-xs border !border-gray-500 h-[300px] resize-none;
     border-top: none;
+    border-radius: 0 0 8px 8px !important;
+    color: white !important;
   }
 
-  .textarea:focus {
+  form label{
+    color: white !important;
+  }
+
+  textarea:focus {
     @apply focus:outline-none focus:border-white focus:ring-0;
   }
 
@@ -61,6 +67,6 @@ body {
   }
 
   .create_button:hover {
-    @apply hover:bg-emPurple-dark text-emDark-light border-emDark-light;
+    @apply hover:bg-purple-500 text-white border-emDark-light;
   }
 }

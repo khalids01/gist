@@ -73,7 +73,7 @@ config :kaffy,
     style: "width:40;height:40px;"
   ],
   admin_logo_mini: "/images/logo-mini.png",
-  hide_dashboard: true,
+  hide_dashboard: false,
   home_page: [schema: [:accounts, :user]],
   # since v0.10.0
   enable_context_dashboards: true,

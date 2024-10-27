@@ -1,4 +1,7 @@
-<section class="flex items-center jusitfy-center em-gradient w-full bg-red-500">
+<section
+  class="!flex !items-center !jusitfy-center em-gradient w-full"
+  style="justify-content: center;"
+>
   <h1 class="text-3xl font-bold text-white ">Share Codes and shipets</h1>
 </section>
 
@@ -12,7 +15,7 @@
     />
 
     <div>
-      <div class="flex p-2 items-center bg-slate-950 rounded-t-md border">
+      <div class="flex p-2 items-center bg-gray-700/30 rounded-t-md border border-gray-500">
         <div class="w-[300px] mb-2">
           <.input
             field={@form[:name]}
@@ -21,12 +24,14 @@
           />
         </div>
       </div>
-      <%# <%= textarea(@form, :markup_text,
-        class: "textarea w-full rounded-b-md",
-        placeholder: "Insert code...",
-        spellcheck: "false",
-        autocomplete: "off"
-      ) %> %>
+      <.input
+        type="textarea"
+        field={@form[:markup_text]}
+        class="textarea"
+        placeholder="Insert code..."
+        spellcheck="false"
+        autocomplete="off"
+      />
     </div>
     <div class="flex justify-end">
       <.button class="create_button">Create gist</.button>

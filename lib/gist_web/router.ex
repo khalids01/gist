@@ -15,6 +15,13 @@ defmodule GistWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+    plug OpenApiSpex.Plug.PutApiSpec, module: GistWeb.ApiSpec
+  end
+
+  scope "/api" do
+    pipe_through :api
+    get "/", OpenApiSpex.Plug.RenderSpec, []
+    get "/docs", OpenApiSpex.Plug.SwaggerUI, path: "/api"
   end
 
   scope "/", GistWeb do
